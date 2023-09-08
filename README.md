@@ -1,2 +1,2 @@
 # SASWebPanel
-Software para la administración de todo tipo de servicios (talleres mecanicos, talleres de reparación de equipo de cómputo, etc)
+Administration software of all kinds of services (mechanical workshops, computer equipment repair shops, etc.)
