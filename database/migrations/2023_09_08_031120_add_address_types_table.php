@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('addresses', function (Blueprint $table) {
+        Schema::create('address_types', function (Blueprint $table) {
             $table->id();
-            $table->string('calle');
-            $table->string('colonia')->nullable();
-            $table->string('estado')->nullable();
-            $table->string('municipio')->nullable();
-            $table->string('cp', 10)->nullable();
-            $table->string('noext');
-            $table->string('noint')->nullable();
+            $table->string('name');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('addresses');
+        Schema::dropIfExists('address_types');
     }
 };

@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('phone');
-            $table->unsignedBigInteger('address_id');
+            $table->string('email')->nullable();
+            $table->string('rfc')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            
-            $table->foreign('address_id')->references('id')->on('addresses');
         });
     }
 
