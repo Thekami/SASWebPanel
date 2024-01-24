@@ -1,7 +1,8 @@
 <?php
-
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::get('/clientes', [ClientController::class, 'index'])->name('client.index');
+Route::get('/clientes/nuevo', [ClientController::class, 'create'])->name('client.create');
+Route::post('/clientes/guardar', [ClientController::class, 'store'])->name('client.store');
 
 
 
