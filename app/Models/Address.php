@@ -12,10 +12,9 @@ class Address extends Model
     use SoftDeletes;
 
     protected $table = 'addresses';
-    protected $fillable = ['street', 'neighborhood', 'city', 'state', 'postal_code', 'country', 'address_type_id', 'client_id'];
 
-    public function clients(){
-        return $this->belongsTo(Client::class);
+    public function customer(){
+        return $this->belongsTo(Customer::class);
     }
 
     public function addressTypes(){

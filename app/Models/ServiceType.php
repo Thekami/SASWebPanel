@@ -12,9 +12,8 @@ class ServiceType extends Model
     use SoftDeletes;
 
     protected $table = 'service_types';
-    protected $fillable = ['name'];
 
-    public function services()
+    public function service()
     {
         return $this->hasMany(Service::class);
     }

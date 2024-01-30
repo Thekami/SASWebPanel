@@ -22,11 +22,11 @@ return new class extends Migration
             $table->string('postal_code')->nullable();      // Código Postal
             $table->string('country')->nullable();          // País
             $table->unsignedBigInteger('address_type_id');
-            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('customer_id');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->foreign('address_type_id')->references('id')->on('address_types');
         });
     }

@@ -6,16 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ServiceStatus extends Model
+class Company extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'service_statuses';
-    protected $fillable = ['name'];
+    protected $table = 'companies';
 
-    public function service()
-    {
-        return $this->hasMany(Service::class);
+    public function branchOffice(){
+      return $this->hasMany(BranchOffice::class);
     }
 }

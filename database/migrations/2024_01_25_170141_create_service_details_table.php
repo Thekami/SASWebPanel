@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('service_details', function (Blueprint $table) {
             $table->id();
             $table->string('concept');
+            $table->integer('quantity')->default(0);
             $table->decimal('cost', 10, 2);
             $table->unsignedBigInteger('service_id');
             $table->unsignedBigInteger('product_id')->nullable();
-            $table->integer('product_quantity')->default(1);
             $table->timestamps();
             $table->softDeletes();
 

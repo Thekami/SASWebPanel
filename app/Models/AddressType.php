@@ -10,7 +10,6 @@ class AddressType extends Model
     use HasFactory;
 
     protected $table = 'address_types';
-    protected $fillable = ['name'];
 
     public function addresses(){
       return $this->hasMany(Service::class);

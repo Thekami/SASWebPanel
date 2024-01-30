@@ -12,10 +12,10 @@ class Service extends Model
     use SoftDeletes;
 
     protected $table = 'services';
-    protected $fillable = ['observation', 'total', 'client_id', 'service_type_id', 'service_status_id'];
+    protected $guarded = [];
 
     public function client(){
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(Customer::class);
     }
 
     public function serviceDetail(){
@@ -28,5 +28,13 @@ class Service extends Model
 
     public function serviceStatus(){
         return $this->belongsTo(ServiceStatus::class);
+    }
+
+    public function branchOffice(){
+        return $this->belongsTo(BranchOffice::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }
